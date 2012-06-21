@@ -1,5 +1,7 @@
 <?php
 
+namspace Zeroem\UUID;
+
 class UUID
 {
   private 
