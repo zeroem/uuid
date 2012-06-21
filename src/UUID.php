@@ -1,9 +1,5 @@
 <?php
 
-$uuid = new UUID("00deadbeef00");
-
-echo "{$uuid}\n";
-
 class UUID
 {
   private 
@@ -16,7 +12,6 @@ class UUID
 
   public function __construct($node) {
     $timestamp = self::getUTCTimeStamp();
-    print_r($timestamp);
     $this->time_low = self::convert($timestamp & 0xffffffff);
     $this->time_mid = self::convert(($timestamp >> 32) & 0x000000ff);
     $this->time_hi_and_version = self::convert((($timestamp >> 48) & 0x0fffffff) | 0x10000000);
@@ -30,7 +25,7 @@ class UUID
 
   public function __toString() {
     return sprintf(
-      "%08s-%04s-%04s-%02s-%02s-%012s",
+      "%08s-%04s-%04s-%02s%02s-%012s",
       $this->time_low,
       $this->time_mid,
       $this->time_hi_and_version,
