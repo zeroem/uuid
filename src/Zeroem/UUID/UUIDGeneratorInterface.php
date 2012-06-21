@@ -1,6 +1,6 @@
 <?php
 
-namspace Zeroem\UUID;
+namespace Zeroem\UUID;
 
 interface UUIDGeneratorInterface
 {
